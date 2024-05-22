@@ -49,4 +49,4 @@ async def get_contact_us(db: db_dependecy):
     return db.query(models.ContactUs).all()
 
 
-uvicorn.run(app, port=8080, host="0.0.0.0")
+uvicorn.run(app, host="0.0.0.0", port=$PORT)

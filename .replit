@@ -1,5 +1,6 @@
 modules = ["python-3.10:v18-20230807-322e88b"]
-run = "fastapi dev main.py --reload"
+# run = "fastapi dev main.py"
+run = ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
 [nix]
 channel = "stable-23_05"
@@ -11,9 +12,10 @@ language = "python3"
 requiredFiles = [".replit", "replit.nix"]
 
 [deployment]
-run = ["sh", "-c", "fastapi dev main.py"]
+# run = ["sh", "-c", "fastapi dev main.py"]
+run = ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 deploymentTarget = "cloudrun"
 
 [[ports]]
-localPort = 8080
+localPort = 8000
 externalPort = 80

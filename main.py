@@ -5,8 +5,11 @@ import models
 from database import SessionLocal, engine
 from sqlalchemy.orm import Session
 import uvicorn
+import os
+print(os.environ['HOME'])
 
-const port = process.env.PORT || 8080;
+
+PORT = os.environ['PORT'] || 8080;
 
 app = FastAPI(title="MithilaIT API Server")
 models.Base.metadata.create_all(bind=engine)
@@ -51,4 +54,4 @@ async def get_contact_us(db: db_dependecy):
     return db.query(models.ContactUs).all()
 
 
-uvicorn.run(app, host="0.0.0.0", port=port)
+uvicorn.run(app, host="0.0.0.0", port=PORT)

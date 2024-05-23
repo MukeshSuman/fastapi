@@ -13,6 +13,6 @@ class ContactUs(Base):
   company_name = Column(String(50), index=True)
   servicetype = Column(String(15), index=True)
   email = Column(String(120), index=True)
-  postion = Column(String(50), index=True)
+  position = Column(String(50), index=True)
   message = Column(Text, index=True)
   created_at = Column(DateTime, index=True, default=datetime.now(timezone.utc))

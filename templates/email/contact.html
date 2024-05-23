@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You for Contacting Us!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Thank You for Contacting Us!</h3>
+        <p><strong>Name:</strong> {{ name }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        {% if company_name %}
+             <p><strong>Company:</strong> {{ company_name }}</p>
+        {% endif %}
+        <p><strong>Service:</strong> {{ service }}</p>
+        <p><strong>Position:</strong> {{ position }}</p>
+        {% if message %}
+            <p><strong>Comment:</strong></p>
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

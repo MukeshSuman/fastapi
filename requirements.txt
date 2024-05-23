@@ -3,3 +3,6 @@ uvicorn
 pydantic
 SQLAlchemy
 mysql-connector-python
+fastapi-mail
+aiosmtplib
+jinja2

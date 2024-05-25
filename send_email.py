@@ -2,7 +2,7 @@ from fastapi import BackgroundTasks
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig, MessageType
 from pathlib import Path
 import json
-from config import EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
+from config import EMAIL_HOST_SERVER, EMAIL_HOST_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 
 EMAIL_TEMPLATE_FOLDER = Path('./templates/email')
 
@@ -11,8 +11,8 @@ class Envs:
     MAIL_USERNAME = EMAIL_HOST_USER
     MAIL_PASSWORD = EMAIL_HOST_PASSWORD
     MAIL_FROM = EMAIL_HOST_USER
-    MAIL_PORT = EMAIL_PORT
-    MAIL_SERVER = EMAIL_HOST
+    MAIL_PORT = EMAIL_HOST_PORT
+    MAIL_SERVER = EMAIL_HOST_SERVER
     MAIL_FROM_NAME = 'Mithila IT'
 
 

@@ -1,13 +1,11 @@
-from typing import List
-from pydantic import BaseModel
+import os
 
-EMAIL_HOST = 'smtp.hostinger.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'info@mithilait.com'
-EMAIL_HOST_PASSWORD = '67yGyYrgMX#y04Er'
+EMAIL_HOST_SERVER = os.environ.get('EMAIL_HOST_SERVER')
+EMAIL_HOST_PORT = int(os.environ.get('EMAIL_HOST_PORT') or '587')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
-
-class MailBody(BaseModel):
-  to: List[str]
-  subject: str
-  body: str
+DB_USERNAME = os.environ.get('DB_USERNAME')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_HOST = os.environ.get('DB_HOST')
+DB_NAME = os.environ.get('DB_NAME')

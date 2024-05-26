@@ -6,3 +6,4 @@ mysql-connector-python
 fastapi-mail
 aiosmtplib
 jinja2
+alembic

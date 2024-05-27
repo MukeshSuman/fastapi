@@ -17,14 +17,14 @@ class DemoBase(BaseModel):
   email: str
   message: str
   date: Annotated[datetime, Body()]
-  type = 'demo'
+  type: str = 'demo'
 
 
 db_dependecy = Annotated[Session, Depends(get_dbase)]
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
-async def contact_us(demo_form: DemoBase, db: db_dependecy):
+async def demo(demo_form: DemoBase, db: db_dependecy):
   db_contact_us = models.ContactUs(**demo_form.model_dump())
   db.add(db_contact_us)
   db.commit()
@@ -38,5 +38,5 @@ async def contact_us(demo_form: DemoBase, db: db_dependecy):
 
 
 @router.get("/", status_code=status.HTTP_200_OK)
-async def get_contact_us(db: db_dependecy):
+async def get_demo(db: db_dependecy):
   return db.query(models.ContactUs).filter_by(type='demo').all()

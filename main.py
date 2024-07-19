@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from api.api import api_router
 
 app = FastAPI(title="MithilaIT API Server")
-# models.Base.metadata.create_all(bind=engine)
+models.Base.metadata.create_all(bind=engine)
 origins = ["*"]
 app.add_middleware(
     CORSMiddleware,

@@ -18,6 +18,7 @@ class DemoBase(BaseModel):
   message: str
   date: Annotated[datetime, Body()]
   type: str = 'demo'
+  mob_no: str | None = None
 
 
 db_dependecy = Annotated[Session, Depends(get_dbase)]

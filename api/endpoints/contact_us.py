@@ -17,6 +17,8 @@ class ContactBase(BaseModel):
   email: str
   position: str
   message: str
+  mob_no: str | None = None
+  type: str = "contact-us"
 
 
 db_dependecy = Annotated[Session, Depends(get_dbase)]

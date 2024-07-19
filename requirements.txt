@@ -7,3 +7,8 @@ fastapi-mail
 aiosmtplib
 jinja2
 alembic
+python-jose[cryptography]
+passlib[bcrypt]
+jose
+bcrypt
+passlib

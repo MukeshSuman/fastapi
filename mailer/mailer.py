@@ -22,6 +22,8 @@ class Envs:
     MAIL_FROM_NAME = 'Mithila IT'
 
 
+print(Envs)
+
 conf = ConnectionConfig(MAIL_USERNAME=Envs.MAIL_USERNAME,
                         MAIL_PASSWORD=Envs.MAIL_PASSWORD,
                         MAIL_FROM=Envs.MAIL_FROM,
@@ -68,6 +70,8 @@ async def send_email_async(subject: str, email_to: str, body: dict,
         template_body=body,
         subtype=MessageType.html,
     )
+
+    print(conf)
 
     fm = FastMail(conf)
     await fm.send_message(message, template_name=template_name.value)
